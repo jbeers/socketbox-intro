@@ -1,0 +1,8 @@
+{
+    "dependencies":{
+        "socketbox":"^2.0.8"
+    },
+    "installPaths":{
+        "socketbox":"modules/socketbox/"
+    }
+}

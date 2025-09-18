@@ -1,0 +1,30 @@
+<script language="javascript">
+
+    // Use wss:// for HTTPS
+    const socket = new WebSocket('/ws');
+
+    socket.onopen = function() {
+        console.log('Connected to WebSocket server');
+        socket.send("ready");
+    };
+
+    socket.onmessage = function(event) {
+        console.log('Message from server:', event.data);
+
+        const outputDiv = document.getElementById('output');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = event.data;
+        outputDiv.appendChild(messageElement);
+    };
+
+    socket.onclose = function(e) {
+        console.log('Socket is closed.');
+    };
+
+    socket.onerror = function(err) {
+        console.error('Socket encountered error: ', err.message );
+    };
+
+</script>
+
+<div id="output"></div>

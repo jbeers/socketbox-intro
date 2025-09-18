@@ -1,0 +1,15 @@
+class extends="modules.socketbox.models.WebSocketCore" {
+    public function onConnect( required channel ){
+        broadcastMessage( "A new channel connected" )
+    }
+
+    public function onClose( required channel ){
+        broadcastMessage( "A channel dropped" )
+    }
+
+    public function onMessage( required message, required channel ){
+        if( message == "ready" ){
+            sendMessage( "Hello, WebSocket!", channel )
+        }
+    }
+}
