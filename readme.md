@@ -1,6 +1,6 @@
 This repo was created to demonstrate a basic CommandBox + SocketBox setup for BoxLang.
 
-To get started clone the repo and run the following commands
+To get started clone the repo and run the following code.
 
 ```sh
 # start commandbox
